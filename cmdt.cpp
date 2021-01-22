@@ -178,7 +178,7 @@ int main(int argc,char* argv[]) {
 			string s2 = "";
 			for (int i = 2; i < argc; i++) {
 				//cout<<i<<" "<<argv[i]<<" ";//test
-				s2 = s2 + argv[i];
+				s2 = s2 + argv[i] + " ";
 			}
 			cout<<s2;// no ending
 		}
@@ -186,7 +186,7 @@ int main(int argc,char* argv[]) {
 	if ((s1=="-e")||(s1=="--effect")) {
 		if (argc > 3) {
 			string s2 = argv[2], s3 = "";
-			for (int i = 3; i < argc; i++) s3 = s3 + argv[i];
+			for (int i = 3; i < argc; i++) s3 = s3 + argv[i] + " ";
 			if (s2=="typing") {
 				for (int i = 0; i < s3.length(); i++) {
 					cout<<s3[i];
