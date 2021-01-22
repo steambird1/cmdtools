@@ -2,13 +2,16 @@
 #include <cstdlib>
 #include <string>
 #include <windows.h>
+#include <conio.h>
 using namespace std;
 
 string help="cmdt by steambird 2021 \nUsage: cmdt <options> <string>\n\nOptions:\n-h, --help   Show this help message and quit \n\
 -c, --color   Change the color of text next time, or no another argument to exit. (For color informations see color /?)\n\
 -s, --sleep   Sleep for a few ms\n\
 -p, --print   Print a text without new line\n\
--e, --effect <effect>  Run a effect";
+-e, --effect <effect>  Run a effect\n\
+-k, --key     Listen to a key and return keycode\n\
+-w, --pass    Input a password as secret mode and output";
 
 #define sHnd GetStdHandle(STD_OUTPUT_HANDLE)
 
@@ -207,6 +210,13 @@ int main(int argc,char* argv[]) {
 					Sleep(DEFAULT_TYPE_SPEED);
 				}
 				setColor("07");
+			} else if (s2=="progress") {
+				// do not output first progress information use this!
+				// keep the length of precent information same each time.
+				for (int i = 0; i < s3.length(); i++) {
+					cout<<"\b \b";
+				}
+				cout<<s3;
 			} else if (s2=="coo") {
 				cout<<s3<<" Coo~~"<<endl;
 			} else {
@@ -215,6 +225,30 @@ int main(int argc,char* argv[]) {
 		} else {
 			err("Required parameter missing\n",ERR_INVAILD_PARAMETER);
 		}
+	}
+	if ((s1=="-k")||(s1=="--key")) {
+		return getch();
+	}
+	if ((s1=="-w")||(s1=="--pass")) {
+		if (argc < 3) {
+			err("Required parameter missing\n",ERR_INVAILD_PARAMETER);
+		}
+		string c = argv[2];
+		int k;
+		string s = "";
+		do {
+			k=getch();
+			if (k==13) break;
+			if (k==8&&s.length()>0) {
+				cout<<"\b \b";
+				s=s.substr(0,s.length()-1);
+				continue;
+			}
+			cout<<"*";
+			s+=char(k);
+		} while (1);
+		if (s==c) return 0;
+		return 1;
 	}
 	return 0;
 } 
