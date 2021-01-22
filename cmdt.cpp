@@ -32,7 +32,7 @@ string help="cmdt by steambird 2021 \nUsage: cmdt <options> <string>\n\nOptions:
 #define ERR_INVAILD_EFFECT 7
 
 
-#define DEFAULT_TYPE_SPEED 50
+#define DEFAULT_TYPE_SPEED 100
 
 void err(string info,int errcode) {
 	cout<<info<<endl;
@@ -193,7 +193,7 @@ int main(int argc,char* argv[]) {
 					Sleep(DEFAULT_TYPE_SPEED);
 				}
 			} else if (s2=="rainbow") {
-				string blist[] = {"09","0A","0B","0C","0D","0E","0F"};
+				string blist[] = {"0A","0B","0C","0D","0E","0F"};
 				for (int i = 0; i < s3.length(); i++) {
 					setColor(blist[i%6]);
 					cout<<s3[i];
