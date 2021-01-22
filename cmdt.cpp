@@ -199,6 +199,14 @@ int main(int argc,char* argv[]) {
 					cout<<s3[i];
 				}
 				setColor("07");
+			} else if (s2=="typing_rainbow") {
+				string blist[] = {"0A","0B","0C","0D","0E","0F"};
+				for (int i = 0; i < s3.length(); i++) {
+					setColor(blist[i%6]);
+					cout<<s3[i];
+					Sleep(DEFAULT_TYPE_SPEED);
+				}
+				setColor("07");
 			} else if (s2=="coo") {
 				cout<<s3<<" Coo~~"<<endl;
 			} else {
