@@ -1,4 +1,5 @@
 #include "cmdtfunc.h"
+#include <cstdlib> 
 #include <iostream>
 using namespace std;
 
@@ -19,5 +20,6 @@ int main() {
 		setColor("07");
 		cout<<endl;
 	}
+	system("pause");
 	return 0;
 }
