@@ -1,5 +1,0 @@
-Update log:
-
-1. Add password inputting (-w), keycode returning (-k) and another "progress" effect (see demo/progressbar-show.bat)
-2. Cleaned files
-3. Add some util to help developing.
