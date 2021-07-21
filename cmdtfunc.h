@@ -82,40 +82,40 @@ WORD getColorByString(string s) {
 	switch (b) {
 		case '0':
 			break;
-		case '1':
-			rpush(BACKGROUND_BLUE);
 		case '9':
 			rpush(BACKGROUND_INTENSITY);
+		case '1':
+			rpush(BACKGROUND_BLUE);
 			break;
-		case '2':
-			rpush(BACKGROUND_GREEN);
 		case 'A':
 			rpush(BACKGROUND_INTENSITY);
+		case '2':
+			rpush(BACKGROUND_GREEN);
 			break;
-		case '3':
-			rpush(BACKGROUND_CYAN);
 		case 'B':
 			rpush(BACKGROUND_INTENSITY);
+		case '3':
+			rpush(BACKGROUND_CYAN);
 			break;
-		case '4':
-			rpush(BACKGROUND_RED);
 		case 'C':
 			rpush(BACKGROUND_INTENSITY);
+		case '4':
+			rpush(BACKGROUND_RED);
 			break;
-		case '5':
-			rpush(BACKGROUND_PINK);
 		case 'D':
 			rpush(BACKGROUND_INTENSITY);
+		case '5':
+			rpush(BACKGROUND_PINK);
 			break;
-		case '6':
-			rpush(BACKGROUND_YELLOW);
 		case 'E':
 			rpush(BACKGROUND_INTENSITY);
+		case '6':
+			rpush(BACKGROUND_YELLOW);
 			break;
-		case '7':
-			rpush(BACKGROUND_WHITE);
 		case 'F':
 			rpush(BACKGROUND_INTENSITY);
+		case '7':
+			rpush(BACKGROUND_WHITE);
 			break;
 		case '8':
 			err("Invaild color\n",ERR_INVAILD_COLOR);
